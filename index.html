@@ -200,5 +200,24 @@
 
   <!-- External JavaScript -->
   <script src="script.js"></script>
+  <div id="usdtModal" class="modal">
+  <div class="modal-content payment-modal">
+    <span class="close-usdt">×</span>
+    <h3>Pay with USDT</h3>
+    <p>Please send exactly the course amount to the address below:</p>
+    
+    <div class="qr-placeholder">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=0xa1b54209d6d0a1660fe6b385c3bb2755224cb96a" alt="QR Code">
+    </div>
+
+    <div class="address-box">
+      <code id="walletAddress">0xa1b54209d6d0a1660fe6b385c3bb2755224cb96a</code>
+      <button onclick="copyAddress()" class="btn-secondary small">Copy</button>
+    </div>
+    
+    <p class="network-warning">⚠️ <strong>Network:</strong> Send only via <strong>TRC-20</strong> (or your specific network).</p>
+    <p class="small">After sending, please email your transaction hash to ngok2242@gmail.com to get your access.</p>
+  </div>
+</div>
 </body>
 </html>
