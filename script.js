@@ -39,10 +39,28 @@ window.onclick = function(event) {
 }
 
 // 3. USDT Payment Button Alert
+// 1. Get the Modal elements
+const usdtModal = document.getElementById("usdtModal");
+const closeBtn = document.querySelector(".close-usdt");
+
+// 2. Attach the modal trigger to all USDT buttons
 document.querySelectorAll('.pay-usdt').forEach(btn => {
-    btn.onclick = function() {
-        const course = this.getAttribute('data-course');
-        const amount = this.getAttribute('data-amount');
-        alert(`Payment Portal Redirect:\n\nCourse: ${course}\nAmount: ${amount} USDT\n\nRedirecting to secure crypto gateway...`);
-    }
+    btn.addEventListener('click', function() {
+        // Pull data from the button's attributes
+        const courseName = this.getAttribute('data-course');
+        const courseAmount = this.getAttribute('data-amount');
+
+        // Update the modal text dynamically
+        usdtModal.querySelector('h3').innerText = `Pay for ${courseName}`;
+        usdtModal.querySelector('p').innerHTML = `Please send exactly <strong>${courseAmount} USDT</strong> to the address below:`;
+
+        // Show the modal
+        usdtModal.style.display = "block";
+    });
 });
+
+// 3. Close Modal logic
+closeBtn.onclick = () => usdtModal.style.display = "none";
+window.onclick = (event) => {
+    if (event.target == usdtModal) usdtModal.style.display = "none";
+}
