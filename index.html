@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CryptoMastery Academy | Master Crypto Trading & Futures</title>
   <meta name="description" content="Master cryptocurrency trading, spot, futures, and leverage. Premium courses for beginners to advanced traders." />
-  
   <link rel="stylesheet" href="style.css">
-  
   <script src="https://s3.tradingview.com/tv.js"></script>
 </head>
 <body>
@@ -32,45 +30,8 @@
       <p>Spot trading, futures, leverage, risk management & proven strategies — even if you’ve never bought Bitcoin.</p>
       <div class="hero-buttons">
         <a href="#courses" class="btn-primary">View Courses</a>
-        <a href="#" class="btn-secondary open-video" data-video="3WP8T6iwg4U">Watch Free 12-Min Tutorial</a>
+        <a href="#" class="btn-secondary">Watch Free 12-Min Tutorial</a>
       </div>
-    </div>
-  </section>
-
-  <section id="features" class="features">
-    <div class="container">
-      <h2 class="section-title">What You’ll Master</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Bitcoin & Altcoins Fundamentals</h3>
-          <p>Blockchain, wallets, on-chain metrics, finding 10x gems early.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Spot Trading Mastery</h3>
-          <p>Chart patterns, volume, support/resistance, perfect entries.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Futures & Leverage</h3>
-          <p>Long/short, funding rates, liquidation mechanics, 100x strategies.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Pro Risk Management</h3>
-          <p>Position sizing, psychology, surviving bear markets.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="webinar" class="webinar-section bg-dark text-white">
-    <div class="container">
-      <h2>Join My FREE Live Training</h2>
-      <form id="webinar-form" class="webinar-form" style="margin-bottom: 20px;">
-        <input type="email" placeholder="Enter your email to reserve spot" required style="padding:15px; width:70%; max-width:400px; border-radius:8px; border:none; margin-right:10px;" />
-        <button type="submit" class="btn-primary large">Reserve Free Spot →</button>
-      </form>
-      <p><strong>How I Turned $5k → $87k in 9 Months Using This Exact System (2026 Bull Run Edition)</strong></p>
-      <p>Next session: <span id="next-webinar">Starting in 14 minutes...</span></p>
-      <p class="small">Limited seats • Recording available for 48h only</p>
     </div>
   </section>
 
@@ -85,5 +46,102 @@
             <h3>Crypto Trading Bootcamp 2026</h3>
             <p>30-day zero-to-hero program. Spot + basic futures.</p>
             <div class="price">49 USDT</div>
-            <div class="tradingview-mini">
-              <div id="tv-btc-bootcamp"></div>
+            
+            <div class="tradingview-mini" style="height: 200px; margin: 15px 0;">
+              <div id="tv-btc-bootcamp" style="height: 100%;"></div>
+              <script type="text/javascript">
+                new TradingView.widget({
+                  "width": "100%", "height": 200, "symbol": "BINANCE:BTCUSDT",
+                  "interval": "D", "theme": "dark", "style": "1", "locale": "en",
+                  "container_id": "tv-btc-bootcamp", "hide_top_toolbar": true
+                });
+              </script>
+            </div>
+            
+            <button class="btn-primary pay-usdt" data-amount="49" data-course="Crypto Trading Bootcamp 2026">Pay with USDT →</button>
+          </div>
+        </article>
+
+        <article class="course-card">
+          <div class="course-image">Futures Master</div>
+          <div class="course-content">
+            <h3>Advanced Futures Mastery</h3>
+            <p>100x leverage, funding arbitrage, institutional tactics.</p>
+            <div class="price">99 USDT</div>
+            
+            <div class="tradingview-mini" style="height: 200px; margin: 15px 0;">
+              <div id="tv-eth-futures" style="height: 100%;"></div>
+              <script type="text/javascript">
+                new TradingView.widget({
+                  "width": "100%", "height": 200, "symbol": "BINANCE:ETHUSDT.P",
+                  "interval": "240", "theme": "dark", "style": "1", "locale": "en",
+                  "container_id": "tv-eth-futures", "hide_top_toolbar": true
+                });
+              </script>
+            </div>
+            
+            <button class="btn-primary pay-usdt" data-amount="99" data-course="Advanced Futures Mastery">Pay with USDT →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div id="usdtModal" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.9);">
+    <div class="modal-content payment-modal" style="background:#1a1a1a; margin:10% auto; padding:30px; border:1px solid #8b5cf6; width:90%; max-width:400px; border-radius:15px; text-align:center; color:white;">
+      <span class="close-usdt" style="cursor:pointer; float:right; font-size:28px;">&times;</span>
+      <h3 id="modal-course-title">Enroll Now</h3>
+      <p id="modal-amount-text">Amount: 0 USDT</p>
+      
+      <div class="qr-placeholder" style="margin: 20px 0;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=0xa1b54209d6d0a1660fe6b385c3bb2755224cb96a" alt="QR Code" style="border:5px solid #fff; border-radius:10px;">
+      </div>
+
+      <div class="address-box" style="background:#000; padding:15px; border-radius:8px; margin:15px 0; word-break:break-all;">
+        <code id="walletAddress" style="color:#a78bfa;">0xa1b54209d6d0a1660fe6b385c3bb2755224cb96a</code>
+        <br><br>
+        <button onclick="copyAddress()" style="background:#8b5cf6; border:none; color:white; padding:5px 15px; border-radius:5px; cursor:pointer;">Copy Address</button>
+      </div>
+      
+      <p style="color:#f87171; font-size:0.9rem;">⚠️ Network: <strong>ERC-20 (Ethereum)</strong></p>
+      <p class="small" style="font-size:0.8rem; opacity:0.7;">Email TXID to ngok2242@gmail.com for instant access.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const modal = document.getElementById("usdtModal");
+      const closeBtn = document.querySelector(".close-usdt");
+
+      // Set up all pay buttons
+      document.querySelectorAll('.pay-usdt').forEach(button => {
+        button.addEventListener('click', function() {
+          const course = this.getAttribute('data-course');
+          const amount = this.getAttribute('data-amount');
+          
+          document.getElementById("modal-course-title").innerText = course;
+          document.getElementById("modal-amount-text").innerHTML = `Send exactly <strong>${amount} USDT</strong>`;
+          modal.style.display = "block";
+        });
+      });
+
+      // Close button
+      closeBtn.onclick = () => modal.style.display = "none";
+      
+      // Close on outside click
+      window.onclick = (event) => {
+        if (event.target == modal) modal.style.display = "none";
+      }
+    });
+
+    // Copy to clipboard function
+    function copyAddress() {
+      const text = document.getElementById("walletAddress").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Address Copied!");
+      });
+    }
+  </script>
+
+</body>
+</html>
